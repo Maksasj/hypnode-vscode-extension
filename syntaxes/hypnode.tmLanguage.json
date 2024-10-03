@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "hypnode",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#attribute_keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.hypnode",
+				"match": "\\b(let|type|node)\\b"
+			}]
+		},
+		"attribute_keywords": {
+			"patterns": [{
+				"name": "keyword.control.hypnode",
+				"match": "\\b(@optional|@required|@trigger|@export|@import)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.hypnode",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hypnode",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": ".hypnode"
+}

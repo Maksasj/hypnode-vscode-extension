@@ -1,0 +1,25 @@
+{
+  "name": "hypnode",
+  "displayName": "hypnode",
+  "description": "This is an extension for hypnode programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "hypnode",
+      "aliases": ["hypnode", "hypnode"],
+      "extensions": [".hn"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "hypnode",
+      "scopeName": ".hypnode",
+      "path": "./syntaxes/hypnode.tmLanguage.json"
+    }]
+  }
+}
