@@ -9,21 +9,69 @@
 			"include": "#attribute_keywords"
 		},
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#literals"
 		}
 	],
 	"repository": {
 		"keywords": {
+			"patterns": [
+				{
+					"include": "#global_keywords"
+				},
+				{
+					"include": "#primitive_types"
+				},
+				{
+					"include": "#attribute_keywords"
+				}
+			]
+		},
+		"global_keywords": {
 			"patterns": [{
 				"name": "keyword.control.hypnode",
 				"match": "\\b(let|type|node)\\b"
 			}]
 		},
+		"primitive_types": {
+			"patterns": [{
+				"name": "support.type",
+				"match": "\\b(u8|u16|u32|u64|i8|i32|i16|i64|f32|f64|bool|string|any)\\b"
+			}]
+		},
 		"attribute_keywords": {
 			"patterns": [{
-				"name": "keyword.control.hypnode",
-				"match": "\\b(@optional|@required|@trigger|@export|@import)\\b"
+				"name": "entity.name.function",
+				"match": "\\b(optional|required|trigger|export|import)\\b"
 			}]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"name": "constant.language",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash",
+					"begin": "#",
+					"end": "\n"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.hypnode",
@@ -33,6 +81,22 @@
 				{
 					"name": "constant.character.escape.hypnode",
 					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\b\\d+\\.\\d+\\b"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "\\b(?<!\\.)\\d+\\b"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "\\b0x[0-9a-fA-F]+\\b"
 				}
 			]
 		}

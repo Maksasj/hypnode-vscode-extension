@@ -2,6 +2,7 @@
   "name": "hypnode",
   "displayName": "hypnode",
   "description": "This is an extension for hypnode programming language",
+  "icon": "./images/6473-galaxy.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
@@ -9,12 +10,20 @@
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maksasj/hypnode-vscode-extension"
+  },
   "contributes": {
     "languages": [{
       "id": "hypnode",
       "aliases": ["hypnode", "hypnode"],
       "extensions": [".hn"],
-      "configuration": "./language-configuration.json"
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./images/6473-galaxy.png",
+        "dark": "./images/6473-galaxy.png"
+      }
     }],
     "grammars": [{
       "language": "hypnode",
